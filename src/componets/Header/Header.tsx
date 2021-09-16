@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React, { FormEvent } from 'react';
-import styles from '../Header/styles.module.css';
+import styles from '../Header/header.module.css';
 import Link from 'next/link';
 import Image from "next/image";
 import Logo from "../../../public/logo.svg";

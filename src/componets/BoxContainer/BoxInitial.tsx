@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../BoxContainer/styles.module.css'
+import styles from '../BoxContainer/boxcontainer.module.css'
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';

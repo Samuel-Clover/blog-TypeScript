@@ -1,10 +1,10 @@
-import Header from '../componets/Header/index';
-import Section from '../componets/Section/index';
+import Header from '../componets/Header/Header';
+import Section from '../componets/Section/Section';
 import ImageSection from '../../public/image3.png';
-import BosxSingle from '../componets/BoxSecondary/index';
+import BosxSingle from '../componets/BoxSecondary/BoxSecondary';
 import BoxContainer from '../componets/BoxContainer/BoxInitial'
-import MenuContainer from '../componets/MenuContainer/index';
-import BoxVerification from '../componets/BoxVerification/index'
+import MenuContainer from '../componets/MenuContainer/MenuContainer';
+import BoxVerification from '../componets/BoxVerification/BoxVerification'
 import styles from '../ui/boxverification.module.css';
 export default function Login() {
     return (

@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import styles from '../Section/styles.module.css'
+import styles from '../Section/section.module.css'
 import Link from 'next/link'
 import Image from "next/image";
 import Button from '@material-ui/core/Button';

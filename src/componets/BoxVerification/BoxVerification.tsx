@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styles from './styles.module.css'
+import styles from './boxverification.module.css'
 import Link from 'next/link'
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';

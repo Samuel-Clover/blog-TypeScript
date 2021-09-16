@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/link-passhref */
 import React from 'react'
-import styles from '../Footer/styles.module.css';
+import styles from '../Footer/footer.module.css';
 import Image from "next/image";
 import Instagram from '../../../public/instagram.svg';
 import Github from '../../../public/github.svg';

@@ -1,9 +1,9 @@
-import Header from '../componets/Header/index';
-import Section from '../componets/Section/index';
+import Header from '../componets/Header/Header';
+import Section from '../componets/Section/Section';
 import ImageSection from '../../public/image1.png';
-import BoxSecondary from '../componets/BoxSecondary/index';
+import BoxSecondary from '../componets/BoxSecondary/BoxSecondary';
 import BoxContainer from '../componets/BoxContainer/BoxInitial';
-import Footer from '../componets/Footer/index';
+import Footer from '../componets/Footer/Footer';
 export default function Home() {
   return (
   <>
