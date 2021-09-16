@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../boxSecondary/boxsecondary.module.css'
+import styles from '../BoxSecondary/boxsecondary.module.css';
 import Link from 'next/link'
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
