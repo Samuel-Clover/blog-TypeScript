@@ -1,0 +1,89 @@
+.headerContainer {
+    display: flex;
+    z-index: 5;
+    background:#3B325B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position:sticky;
+    top: 0;
+    padding: 20px;
+    align-items: center;
+
+}
+.ContainerMenu {
+    width: auto;
+    display: flex;
+    margin: 0 auto;
+}
+.ContainerMenu ul{
+    display: flex; 
+    text-decoration: none;
+    list-style-type: none;
+    font:  400 16px 'Roboto Condensed', sans-serif;
+}
+.LogoItem{
+    display: flex;
+}
+
+.headerContainer a {
+    margin: 20px;
+    font-weight:lighter;
+    color: white;
+    text-decoration: none;
+    
+}
+.LoginMenu a {
+    font:  700 16px 'Roboto Condensed', sans-serif;
+}
+.responsivo {
+    display: none;
+}
+
+
+/* @media (max-width: 760px) {
+    .headerContainer{
+        flex-direction: column;
+        text-align: center;
+        height:100%;
+        width: 100%;
+        position:fixed;
+        top: auto;
+
+    } 
+     .LogoItem  {
+      display:inline-flex;
+      top: 15px;
+     position: absolute;
+    align-self: flex-end;
+    }
+    .responsivo{
+        display: flex;
+        margin-right: auto;
+        
+    }
+    .headerContainer a {
+        margin: 8px;
+    }
+    .ContainerMenu {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+    }
+    .ContainerMenu ul {
+        align-items: center;
+        flex-direction: column;
+   
+    }
+    .LoginMenu {
+        display: flex;
+        flex-flow: column;
+        margin-bottom: 100px;
+        align-items: center;
+      
+    }
+    .ContainerMenu ul li{
+        line-height: 25px;
+        margin-bottom: 5px;
+    }
+
+   
+} */

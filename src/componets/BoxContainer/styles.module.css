@@ -1,0 +1,124 @@
+/*Style do box conainer */
+.boxContainer {
+  z-index: 2;
+  width: 85%;
+  margin: 0 auto;
+  background-color:white;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  position: relative;
+  margin-top: -5%;
+  padding: 10px;
+}
+.boxContainer h3 {
+font:  700 16px 'Roboto Condensed', sans-serif;
+font-weight: bold;
+font-size: 24px;
+margin: 40px;
+}
+/*Style do box conainer */
+
+/*Box-Pages views if{initial}*/
+.boxPages {
+  z-index: 3;
+  margin-left: auto;
+  width: 84%;
+  padding: 5px;
+  background-color:white;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  position:relative;
+  margin-top: -35%;
+  margin-bottom: 13%;
+  right: 20px;
+}
+.boxPages h3 {
+  font:  700 16px 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 40px;
+}
+/*Box-pages if{end}*/
+
+
+
+/*Page Box-Post view if{initial}*/
+.boxPost {
+    z-index: 3;
+    margin: 0 auto;
+    width: 80%;
+    padding: 5px;
+    background-color:white;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    position:relative;
+    margin-top: -25%;
+  
+}
+.boxPositonStyle {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: 1.1fr 0.6fr;
+    padding: 10px;
+}
+.boxPost h1 {
+    font:  700 24px 'Roboto Condensed', sans-serif;
+    text-align: justify;
+    margin: 30px 3em;
+}
+
+.boxGetComponent img {
+    width: 100%;
+    border-radius: 3px;
+}
+.boxGetComponent span {
+    display: flex;
+    font: 400 15px 'Roboto Condensed', sans-serif;
+    justify-content: flex-end;
+    line-height: 30px;
+}
+.boxGetComponent p {
+    display: flex;
+    justify-content: center;
+    font: 400 16px 'Roboto Condensed', sans-serif;
+    padding: 15px;
+}
+.BoxAnunciosGetComponent {
+    margin: 40% 0;
+}
+.mb{ 
+    margin-bottom: 20px;
+}
+.BoxAnunciosGetComponent h2 {
+    margin-bottom: 20px;
+    font: 700 20px 'Roboto Condensed', sans-serif;
+}
+/*Page Post view if{end}*/
+
+
+
+/*Posição itens */
+.boxPosition {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+.boxCard {
+  width: 31%;
+  margin: 1px auto;
+  margin-bottom: 25px;
+
+}
+@media (max-width: 850px) {
+
+.boxCard {
+    width: auto;
+    margin: 10px auto;
+    
+  }
+ 
+}

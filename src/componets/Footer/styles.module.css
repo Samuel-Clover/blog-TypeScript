@@ -1,0 +1,86 @@
+#Main_footer {
+ display:flex;
+ background-color: #3B325B;
+ padding: 20px;
+ justify-content:space-between;
+ margin-top: 5%;
+}
+.Quem_somos {
+    flex: 2.1 100px;
+
+}
+.Quem_somos p {
+    font:  400 16px 'Roboto Condensed', sans-serif;
+    color:white;
+    line-height:24px;
+    
+}
+.Quem_somos h3 {
+    font:  700 22px 'Roboto Condensed', sans-serif;
+    margin-left: 4px;
+    color:white;
+    margin-bottom: 8px;
+}
+.Quem_somos hr {
+    width: 125px;
+    background-color: white;
+    margin-bottom: 10px;
+}
+.Post_lancamentos {
+    flex: 1px;
+}
+.Post_lancamentos hr {
+    width: 225px;
+    background-color: white;
+    margin-bottom: 10px;
+}
+.Post_lancamentos p {
+    font:  400 16px 'Roboto Condensed', sans-serif;
+    color:white;
+    line-height:24px;
+}
+.Post_lancamentos h3 {
+    font:  700 22px 'Roboto Condensed', sans-serif;
+    margin-left: 5px;
+    margin-bottom: 8px;
+    color:white;
+}
+.Contato {
+    flex: 1px;
+}
+.Contato button {
+    position: relative;
+    top:10px;
+    margin-left: 10px;
+    border: none;
+    background:transparent;
+    cursor: pointer;
+}
+.Contato hr {
+    width: 85px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+.Contato p {
+    font:  400 16px 'Roboto Condensed', sans-serif;
+    color:white;
+    line-height:24px;
+}
+.Contato span {
+    font:  700 16px 'Roboto Condensed', sans-serif;
+    color:white;
+    line-height:24px;
+}
+.Contato h3 {
+    margin-left: 5px;
+    margin-bottom: 8px;
+    font:  700 22px 'Roboto Condensed', sans-serif;
+    color:white;
+}
+.copyright {
+    text-align: center;
+    padding:10px;
+    font:  400 16px 'Roboto Condensed', sans-serif;
+    background:  rgba(59, 50, 91, 0.83);
+    color:white;
+}

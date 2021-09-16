@@ -1,0 +1,39 @@
+.boxSingle{
+  z-index: 1;
+  width: 85%;
+  margin: 0 auto;
+  background:white;
+  margin-top: 50px;
+}
+.boxSingle h3 {
+font-family: Roboto Condensed;
+font-size: 24px;
+font-weight: bold;
+margin:1.5rem 9rem;
+
+}
+.boxPosition {
+display:flex;
+flex-direction: row;
+/* flex-wrap: wrap; */
+justify-content:space-between;
+}
+.boxCard {
+  flex: 1 28%;
+  margin: 5px;
+}
+
+@media (max-width: 850px) {
+  .boxSingle{
+    margin-top: 50px;
+  }
+  .boxSingle h3 {
+    font-size: 20px;
+    margin: 4px 2rem;
+  }
+  .boxCard {
+    flex: auto;
+    margin: 10px;
+    
+  }
+}

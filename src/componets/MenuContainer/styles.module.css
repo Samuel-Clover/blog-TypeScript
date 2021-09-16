@@ -1,0 +1,22 @@
+.ContainerMenu {
+    text-align:center;
+    line-height: 3;
+    padding: 12px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background: white;
+    margin-right: auto;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.ContainerMenuPosition{
+    display:flex;
+    top: 13rem;
+    position: absolute;
+    margin-left: 5px;
+   
+}
+.title{
+    padding: 7px;
+    font:  700 16px 'Roboto Condensed', sans-serif;
+}

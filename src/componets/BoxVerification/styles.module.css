@@ -1,0 +1,49 @@
+.BoxDynamicContainer {
+    z-index: 2;
+    background:white;
+    width:40%;
+    padding:30px;
+    margin: 0 auto;
+    background:#376BD0;
+    border-radius: 5px;
+ 
+}
+ .icon {
+    position:relative;
+    background:#56D8EE;
+    width:72px;
+    height:8px;
+    margin-left: 4px;
+    border-radius: 12px;
+    margin: 0 auto;
+}
+.BoxDynamicContainer hr {
+    margin-bottom: 20px;
+    width:45%;
+    margin-top: -2.7px;
+    margin-left: 44%;
+}
+.BoxDynamicContainer h3 {
+    text-align:center;
+    color:white;
+    font:  700 26px 'Roboto Condensed', sans-serif;
+    margin-bottom: 3px;
+
+}
+
+
+
+ .ButtonItem {
+    font:  400 16px 'Roboto Condensed', sans-serif;
+    text-transform: capitalize;
+    color:white;
+    height: 40px;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+
+.positionform  {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+ }
