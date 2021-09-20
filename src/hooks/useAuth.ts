@@ -8,6 +8,7 @@ type User = {
 }
 export function useAuth() {
 const [user, setUser] = useState<User>();
+
   function verifyAccount(user: User | any) {
     if(user) {
       const { displayName, uid, photoURL} = user
@@ -39,23 +40,25 @@ const [user, setUser] = useState<User>();
       
         const provider = new firebase.auth.GoogleAuthProvider()
         const result = await auth.signInWithPopup(provider)
-        const email = result.user?.email
           verifyAccount(result.user)
-                // auth.sendSignInLinkToEmail(`${email}`, actionCodeSettings).then((link) => {
-                //     // Construct sign-in with email link template, embed the link and
-                //     // send using custom SMTP server.
+          if(result.additionalUserInfo.isNewUser){
+              result.user.sendEmailVerification(actionCodeSettings).then((link) => {
+                    // Construct sign-in with email link template, embed the link and
+                    // send using custom SMTP server.
                     
-                //     console.log('email enviado com sucesso', link);
-                // })
+                    console.log('email enviado com sucesso', link);
+              })
+          }else {
+            return result.user 
+          }
         
        }
        
       async function LoggoutwidhGoogle() {
       await firebase.auth().signOut().then(() => {
           alert('usuario deslogado com sucesso')
-          router.replace('/')
+          router.reload()
       })
-    
        }
        return { user,  setUser, signInWithGoogle,LoggoutwidhGoogle}
       

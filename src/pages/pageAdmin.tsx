@@ -62,9 +62,10 @@ const useStyles = makeStyles(() =>
   }),
 );
 export default function pageAdmin () {
-  const [categorypost, setCategoryPost] = useState('')
-  const [newtitle, setNewTitle] = useState('')
-  const [newbody, setNewBody] = useState('')
+  const [NewBody, setNewBody] = useState({
+   title: '',
+   body: '' 
+  })
   const [newcategoria, setNewCategoria] = useState('')
   const [selectFile, setSelectedFile] = useState('' || undefined)
   const {categoria} = useCategory()
@@ -74,9 +75,13 @@ export default function pageAdmin () {
 		setSelectedFile(event.target.files[0]);
 	}
  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-  setCategoryPost(event.target.value as string)
+  setNewCategoria(event.target.value as string)
  }
 
+ const OnChangeBody = (event) => {
+   const {name, value } = event.target 
+    setNewBody({...NewBody, [name]: value})
+ }
   
    function AddNewCategory(event: FormEvent) {
     event.preventDefault()
@@ -92,17 +97,20 @@ export default function pageAdmin () {
     setNewCategoria('')
    }
    async function AddNewPost(event: FormEvent) {
+     
     event.preventDefault()
-    if(newtitle.trim() === "" || newbody.trim() === "" || categorypost.trim() === ""){
+    if(NewBody.title.trim() === "" || NewBody.body.trim() === "" || newcategoria.trim() === ""){
       return;
     }
     if(selectFile == undefined){
       window.confirm('deseja fazer um post sem imagem mesmo ?')
       firestore.collection('posts').doc().set({
-        title: newtitle,
-        body: newbody,
-        categoria: categorypost,
-        image: 'undefined',
+        body: {
+          title: NewBody.title,
+          body: NewBody.body,
+          image:'undefined',
+        },
+        categoria: newcategoria,
         date: new Date()
       })
       
@@ -112,11 +120,11 @@ export default function pageAdmin () {
       storage.ref("imagepost/"+selectFile.name).getDownloadURL().then((link) => {
         firestore.collection('posts').doc().set({
           body: {
-            title: newtitle,
-            body1: newbody,
+            title: NewBody.title,
+            body: NewBody.body,
             image:link,
           },
-          categoria: categorypost,
+          categoria: newcategoria,
           date: new Date()
         })
       })
@@ -158,21 +166,21 @@ export default function pageAdmin () {
             <Toolbar />
             <form className={classes.BoxPosts} onSubmit={AddNewPost} noValidate autoComplete="off">
               <label>Formulario de Posts</label>
-              <TextField id="standard-basic" label="title-post" className={classes.mb}  value={newtitle}
-                onChange={(event) => setNewTitle(event.target.value)} />
+              <TextField id="standard-basic" label="title-post" className={classes.mb}  name="title"
+                onChange={OnChangeBody} />
               <TextField
                 label="Body-Post"
                 className={classes.mb}
                 multiline
                 rows={4}
                 variant="outlined"
-                value={newbody}
-                onChange={(event) => setNewBody(event.target.value)}
+                name="body"
+                onChange={OnChangeBody}
               />
               <FormControl className={classes.mb}>
                 <InputLabel htmlFor="grouped-select">Categoria-Posts</InputLabel>
                 <Select defaultValue='' id="grouped-select"
-                    value={categorypost}
+                    value={newcategoria}
                     onChange={handleChange}>
                   {categoria.map((values, index) => {
                      return(
@@ -198,6 +206,10 @@ export default function pageAdmin () {
               </div>
               <Button type="submit" variant="outlined">Enviar</Button>
             </form>
+            
+            
+            
+            
             <form className={classes.BoxPosts} noValidate autoComplete="off" onSubmit={AddNewCategory}>
               <label>Add Categorias de Posts</label>
               <TextField id="standard-basic" label="Categoria" value={newcategoria} onChange={(event) => setNewCategoria(event.target.value)} className={classes.mb} />

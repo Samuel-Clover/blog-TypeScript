@@ -13,8 +13,6 @@ import { useAuth } from '../../hooks/useAuth';
 
 export default function BoxVerification () {
   const {user , signInWithGoogle} = useAuth()
-
-  console.log(user)
   const Theme = createTheme({
     palette: {
       primary: {

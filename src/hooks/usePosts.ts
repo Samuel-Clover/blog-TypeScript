@@ -10,9 +10,10 @@ type PostsType = {
   }
 type FirebasePosts = Record<string,{
     title: string;
-    body: string;
+    body1: string;
     date:Object;
     categoria:string;
+    image: string;
 }>
 export function usePosts(limit?: number , orderby?: string, id_document?: string) {
 const [posts, setPosts] = useState<PostsType[]>([])
@@ -21,18 +22,21 @@ useEffect(() => {
           const databasePosts = querySnapshot.docs.map((value, key) =>  {
             const date = value.data().date.toDate() as FirebasePosts
             const id = value.id as unknown as FirebasePosts
-            const {title, categoria, body, image}  = value.data() as FirebasePosts
+            const {body, categoria } = value.data() as FirebasePosts
+            const { body1, title, image } = body
+            console.log(body)
             return {
               id: id,
+              body:body1.toString().substring(0, 15),
               title: title,
-              body: body.toString().substring(0, 25),
+              imagem: image,
               categoria:categoria,
-              imagem:image,
               date:date.toLocaleString().substring(0, 10)
   
             }
           })
           setPosts(databasePosts)
+          console.log(databasePosts)
     });
   }, [id_document, limit, orderby])
 

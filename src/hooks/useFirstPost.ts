@@ -9,9 +9,9 @@ type PostsType = {
   }
 type FirebasePosts = Record<string,{
     title: string;
-    body: string;
+    body1: string;
     date:Object;
-    imagem: string;
+    image: string;
     categoria:string;
 }>
 export function useFirstPost(id_document?: string) {
@@ -20,14 +20,15 @@ useEffect(() => {
     const docRef = firestore.collection("posts").doc(id_document);
     docRef.get().then((doc) => {
             const date = doc.data()?.date.toDate() as FirebasePosts
-            const {title,body,image, categoria} = doc?.data() as FirebasePosts
+            const {body, categoria} = doc?.data() as FirebasePosts
+            const {title, body1, image} =body
             setfirstPost(
             [{
                 title: title,
                 date: date.toLocaleString().substring(0, 10),
                 categoria:categoria,
                 imagem:image,
-                body: body
+                body: body1
             }])   
     }).catch((error) => {
         error

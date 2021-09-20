@@ -15,7 +15,6 @@
 }
 body {
     background: var(--gray-50);
-    scroll-behavior: smooth;
 }
 body, input, textarea, button {
   

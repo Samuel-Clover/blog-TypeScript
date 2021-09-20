@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import React, { FormEvent } from 'react';
+import React, { FormEvent, useState } from 'react';
 import styles from '../Header/header.module.css';
 import Link from 'next/link';
+import router from 'next/router'
 import Image from "next/image";
 import Logo from "../../../public/logo.svg";
 import { useAuth } from '../../hooks/useAuth';
@@ -25,7 +27,37 @@ export default function Header () {
     }
   }),
 );
+function handleClickScroll () {
+    smoothScrollTo(0, window.innerHeight)    
+}
+function smoothScrollTo(endX:number, endY:number, duration?:number) {
+  const startX = window.scrollX || window.pageXOffset;
 
+  const startY = window.scrollY || window.pageYOffset;
+ 
+  const distanceX = endX - startX;
+  const distanceY = endY - startY;
+  const startTime = new Date().getTime();
+
+  duration = typeof duration !== 'undefined' ? duration : 500;
+
+  // Easing function
+  const easeInOutQuart = (time, from, distance, duration) => {
+    if ((time /= duration / 2) < 1) 
+    return distance / 2 * time * time * time * time + from;
+    return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
+  };
+
+  const timer = setInterval(() => {
+    const time = new Date().getTime() - startTime;
+    const newX = easeInOutQuart(time, startX, distanceX, duration);
+    const newY = easeInOutQuart(time, startY, distanceY, duration);
+    if (time >= duration) {
+      clearInterval(timer);
+    }
+    window.scroll(newX, newY);
+  }, 1000 / 60); // 60 fps
+};
 
 const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -48,10 +80,10 @@ const handleClose = () => {
             <ul>
                 <li><Link href="/"><a>Inicio</a></Link></li>
                 <li><Link href="/postsgeral"><a>Posts-Geral</a></Link></li>
-                <li><a onClick={()=> window.scroll({top: 1100,left: 0, behavior: 'smooth'})}>Sobre</a></li>
-                <li><a onClick={()=> window.scroll({top: 1100,left: 0, behavior: 'smooth'})}>Contato</a></li>
+                <li><a style={{cursor: 'pointer'}} onClick={handleClickScroll}>Sobre</a></li>
+                <li><a style={{cursor: 'pointer'}} onClick={handleClickScroll}>Contato</a></li>
             </ul>
-
+            
         </nav>
         {!user ? (
         <div className={styles.LoginMenu}>
